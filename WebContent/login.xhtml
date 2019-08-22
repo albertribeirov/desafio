@@ -1,0 +1,46 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:h="http://java.sun.com/jsf/html" xmlns:f="http://java.sun.com/jsf/core" xmlns:ui="http://java.sun.com/jsf/facelets" xmlns:p="http://primefaces.org/ui">
+<h:head>
+	<meta content="text/html; charset=UTF-8" http-equiv="Content-Type" />
+	<title>Desafio</title>
+
+	<style>
+body {
+	text-align: center;
+}
+
+form {
+	display: inline-block;
+	padding-top: 150px;
+}
+
+.login {
+	float: center;
+	text-align: center;
+}
+</style>
+</h:head>
+<h:body>
+	<h:form id="form" prependId="false">
+	<p:growl for="message" sticky="false" showDetail="true" life="2000" />
+		<p:panel>
+			<h:panelGrid columns="2">
+
+				<h:panelGrid columns="1">
+
+					<p:outputLabel value="Usuário" />
+					<p:inputText value="#{usuarioBean.usuario.nome}" />
+
+					<p:outputLabel value="Senha" />
+					<p:password value="#{usuarioBean.senhaTelaLogin}" />
+
+				</h:panelGrid>
+
+			</h:panelGrid>
+		</p:panel>
+		<br/>
+		<p:commandButton value="Fazer Logon" id="loginButton" action="#{usuarioBean.login}" update="form" icon="ui-icon ui-icon-suitcase" />
+	</h:form>
+</h:body>
+</html>
